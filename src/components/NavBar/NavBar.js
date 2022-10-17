@@ -1,8 +1,9 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { CarritoWidget } from './CartWidget/CartWidget';
-import { NavBrand } from './NavBrand/NavBrand';
+import { CarritoWidget } from '../CartWidget/CartWidget';
+import { NavBrand } from '../NavBrand/NavBrand';
+import { Link } from 'react-router-dom';
 
 export const BarraNav = () => {
     return (
@@ -12,10 +13,10 @@ export const BarraNav = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#inicio">Inicio</Nav.Link>
-              <Nav.Link href="#cuidados">Cuidados</Nav.Link>
-              <Nav.Link href="#productos">Productos</Nav.Link>
-              <Nav.Link href="#contacto">Contacto</Nav.Link>
+              <Nav.Link as={Link} to ="/">Inicio</Nav.Link>
+              <Nav.Link as={Link} to ="/cuidados">Cuidados</Nav.Link>
+              <Nav.Link as={Link} to ="/productos">Productos</Nav.Link>
+              <Nav.Link as={Link} to="/contacto">Contacto</Nav.Link>
             </Nav>
           </Navbar.Collapse>
           <Nav.Item><CarritoWidget/></Nav.Item> 
